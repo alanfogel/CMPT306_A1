@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://csr5flh4se7l"]
+[gd_scene load_steps=5 format=3 uid="uid://csr5flh4se7l"]
 
 [ext_resource type="Shader" path="res://Main Scene.gdshader" id="1_iw1x5"]
+[ext_resource type="Texture2D" uid="uid://m31i0gv1w41h" path="res://circle.png" id="2_m4s26"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2e8fw"]
 shader = ExtResource("1_iw1x5")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gwhp0"]
+radius = 15.0
+
 [node name="Node2D" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_2e8fw")
@@ -16,3 +21,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_m4s26")
+offset = Vector2(0, -100)
+
+[node name="Area2D" type="Area2D" parent="Player/PlayerSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerSprite/Area2D"]
+shape = SubResource("CircleShape2D_gwhp0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
