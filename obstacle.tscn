@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8compuodhcrt"]
+
+[ext_resource type="Script" path="res://obstacle.gd" id="1_xe4ll"]
+
+[node name="Obstacle" type="AnimatableBody2D"]
+script = ExtResource("1_xe4ll")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(37, -70, 74, 0, 40, 64, -41, 64, -73, 0, -36, -73, -63, -87, -106, 0, -59, 96, 59, 97, 108, 1, 64, -88, 36, -73)
+
+[node name="Line2D" type="Line2D" parent="CollisionPolygon2D"]
+points = PackedVector2Array(-50, -80, -90, 0, -50, 80, 50, 80, 90, 0, 50, -80)
+width = 30.0
