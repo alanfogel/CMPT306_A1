@@ -6,6 +6,8 @@ class_name Obstacle
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$CollisionPolygon2D.scale = Vector2.ONE*10.0
+	$CollisionPolygon2D.rotation = randf_range(0.0, 360.0)
+	
 
 func _physics_process(delta: float) -> void:
 	$CollisionPolygon2D.scale -= Vector2.ONE * shrink_speed*delta
