@@ -6,7 +6,7 @@ void vertex() {
 
 void fragment() {
 	// Called for every pixel the material is visible on.
-	COLOR = vec4(TIME/6.0f, 0.0f, 0.0f, 1.0f);
+	COLOR = vec4(sin(TIME), sin(TIME - 2.0), sin(TIME - 4.0), 1.0f);
 }
 
 //void light() {
